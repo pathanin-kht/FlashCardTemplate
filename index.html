@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Card Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Vocabulary Review App</h1>
+        
+        <div id="addMode">
+            <div class="card">
+                <div class="input-group">
+                    <input type="text" id="wordInput" placeholder="Word">
+                    <input type="text" id="meaningInput" placeholder="Meaning">
+                    <button onclick="addVocabulary()">Add Word</button>
+                </div>
+            </div>
+            
+            <div id="vocabList" class="vocab-list"></div>
+        </div>
+
+        <div id="reviewMode" style="display: none;">
+            <div class="card review-card">
+                <div id="reviewWord" class="word"></div>
+                <div id="reviewMeaning" class="meaning" style="display: none;"></div>
+                <div class="button-group">
+                    <button onclick="toggleMeaning()">Show/Hide Meaning</button>
+                    <button class="success" onclick="markAsKnown()">I Know This</button>
+                    <button class="danger" onclick="markAsUnknown()">Don't Know</button>
+                </div>
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+
+        <div class="mode-toggle">
+            <button class="secondary" onclick="toggleMode()" id="modeToggleBtn">
+                Start Review
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
